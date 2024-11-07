@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    background-image: url('assets/newbg1.png');
+    background-size: cover; /* Ensures the image covers the entire page */
+    background-position: center center; /* Centers the image in both directions */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure the body takes the full viewport height */
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.container {
+    position: fixed; /* Fixes the container in place */
+    width: 100%;
+    max-width: 400px;
+    background: rgba(17, 17, 17, 0.5); /* Black with transparency */
+    padding: 20px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Slightly transparent white border */
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.container .post {
+    display: none;
+}
+
+.container .text {
+    font-size: 1.5rem; /* Adjusted for scalability */
+    color: #666;
+    font-weight: 500;
+}
+
+.container .star-widget {
+    display: flex;
+    justify-content: center; /* Center align the star-widget */
+    flex-wrap: wrap; /* Wrap content for smaller screens */
+}
+
+.container .star-widget input {
+    display: none;
+}
+
+.star-widget label {
+    float: right;
+    font-size: 2.5rem; /* Adjusted for scalability */
+    color: #444;
+    margin-right: 10px;
+    padding: 5px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+/* Responsive styles */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px 20px;
+    }
+    .container .text {
+        font-size: 1.2rem; /* Adjusted for scalability */
+    }
+    .star-widget label {
+        font-size: 2rem; /* Adjusted for scalability */
+        margin-right: 5px; /* Reduce margin for smaller screens */
+    }
+}
+
+input#rate-1:not(:checked) ~ #label1:hover,
+input#rate-1:not(:checked) ~ #label1:hover ~ label {
+    color: #FF0000;
+}
+
+input#rate-2:not(:checked) ~ #label2:hover,
+input#rate-2:not(:checked) ~ #label2:hover ~ label {
+    color: #FFA500;
+}
+
+input#rate-3:not(:checked) ~ #label3:hover,
+input#rate-3:not(:checked) ~ #label3:hover ~ label {
+    color: #fe4;
+}
+
+input#rate-4:not(:checked) ~ #label4:hover,
+input#rate-4:not(:checked) ~ #label4:hover ~ label {
+    color: #9ACD32;
+}
+
+input#rate-5:not(:checked) ~ #label5:hover,
+input#rate-5:not(:checked) ~ #label5:hover ~ label {
+    color: #00ff00;
+}
+
+input#rate-1:checked ~ label {
+    color: #FF0000;
+}
+
+input#rate-2:checked ~ label {
+    color: #FFA500;
+}
+
+input#rate-3:checked ~ label {
+    color: #fe4;
+}
+
+input#rate-4:checked ~ label {
+    color: #9ACD32;
+}
+
+input#rate-5:checked ~ label {
+    color: #00ff00;
+    text-shadow: 0 0 20px #952;
+}
+
+#rate-1:checked ~ form header:before {
+    color: #FF0000;
+    content: "Poor";
+    display: block; /* Ensures header is centered */
+}
+
+#rate-2:checked ~ form header:before {
+    color: #FFA500;
+    content: "Unsatisfactory";
+    display: block; /* Ensures header is centered */
+}
+
+#rate-3:checked ~ form header:before {
+    color: #fe4;
+    content: "Good";
+    display: block; /* Ensures header is centered */
+}
+
+#rate-4:checked ~ form header:before {
+    color: #9ACD32;
+    content: "Satisfactory";
+    display: block; /* Ensures header is centered */
+}
+
+#rate-5:checked ~ form header:before {
+    color: #00ff00;
+    content: "Excellent";
+    display: block; /* Ensures header is centered */
+}
+
+.container form {
+    display: none;
+}
+
+input:checked ~ form {
+    display: block;
+}
+
+form header {
+    width: 100%;
+    font-size: 1.5rem; /* Adjusted for scalability */
+    clear: both;
+    font-weight: 500;
+    margin: 5px 0 20px 0;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+form .textarea {
+    height: 100px;
+    width: 100%;
+    overflow: hidden;
+}
+
+form .textarea textarea {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #eee;
+    border: 1px solid #333;
+    background: #222;
+    padding: 10px;
+    font-size: 1rem; /* Adjusted for scalability */
+    resize: none;
+}
+
+form .btn {
+    height: 45px;
+    width: 100%;
+    margin: 15px 0;
+}
+
+form .btn button {
+    height: 100%;
+    width: 100%;
+    border: 1px solid #444;
+    outline: none;
+    background: #222;
+    color: #999;
+    font-size: 1rem; /* Adjusted for scalability */
+    font-weight: 500;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form .btn button:hover {
+    background-color: #1b1b1b;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px 20px;
+    }
+    .container .text {
+        font-size: 1.25rem;
+    }
+    .star-widget label {
+        font-size: 2rem;
+        padding: 4px;
+    }
+    form header {
+        font-size: 1.25rem;
+    }
+    form .textarea {
+        height: 80px;
+    }
+    form .textarea textarea {
+        font-size: 0.9rem;
+    }
+    form .btn {
+        height: 40px;
+    }
+    form .btn button {
+        font-size: 0.9rem;
+    }
+}
