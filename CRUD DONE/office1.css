@@ -7,23 +7,34 @@
     font-family: 'Poppins', sans-serif;
 }
 
-html, body {
+html {
     display: flex;
     height: 100%;
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: #000;
 }
+body {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(assets/newbg01.png);
+}
+
 
 .container {
     position: relative;
     width: 100%;
     max-width: 400px;
-    background: #111;
+    background-color: rgba(255, 255, 255, 0.7);
     padding: 20px 30px;
-    border: 1px solid;
-    border-radius: 5px;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0, 0.5); /* Semi-transparent black border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth with a shadow */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,6 +60,7 @@ html, body {
     color: #444;
     padding: 5px;
     float: right;
+    margin-right: 5px;
     transition: all 0.2s ease;
     cursor: pointer;
 }
@@ -60,17 +72,17 @@ input#rate-1:not(:checked) ~ #label1:hover ~ label {
 
 input#rate-2:not(:checked) ~ #label2:hover,
 input#rate-2:not(:checked) ~ #label2:hover ~ label {
-    color: #FFA500;
+    color: #ff6600
 }
 
 input#rate-3:not(:checked) ~ #label3:hover,
 input#rate-3:not(:checked) ~ #label3:hover ~ label {
-    color: #fe4;
+    color: #FFD500;
 }
 
 input#rate-4:not(:checked) ~ #label4:hover,
 input#rate-4:not(:checked) ~ #label4:hover ~ label {
-    color: #9ACD32;
+    color: #C1FF1C;
 }
 
 input#rate-5:not(:checked) ~ #label5:hover,
@@ -80,44 +92,48 @@ input#rate-5:not(:checked) ~ #label5:hover ~ label {
 
 input#rate-1:checked ~ label {
     color: #FF0000; 
+    text-shadow: 0 0 22px #952;
 }
 input#rate-2:checked ~ label {
-    color: #FFA500;
+    color: #ff6600;
+    text-shadow: 0 0 22px #952;
 }
 input#rate-3:checked ~ label {
-    color: #fe4;
+    color: #FFD500;
+    text-shadow: 0 0 22px #952;
 }
 input#rate-4:checked ~ label {
-    color: #9ACD32;
+    color: #C1FF1C;
+    text-shadow: 0 0 22px #952;
 }
 input#rate-5:checked ~ label {
     color: #00ff00;
-    text-shadow: 0 0 20px #952;
+    text-shadow: 0 0 22px #952;
 }
 
 #rate-1:checked ~ form header:before {
     color: #FF0000 ;
-    content: "Poor";
+    content: "Very Bad";
 }
 
 #rate-2:checked ~ form header:before {
-    color: #FFA500;
-    content: "Unsatisfactory";
+    color: #ff6600;
+    content: "Poor";
 }
 
 #rate-3:checked ~ form header:before {
-    color: #fe4;
+    color: #FFD500;
     content: "Good";
 }
 
 #rate-4:checked ~ form header:before {
-    color: #9ACD32;
-    content: "Satisfactory";
+    color: #C1FF1C;
+    content: "Great";
 }
 
 #rate-5:checked ~ form header:before {
     color: #00ff00;
-    content: "Very Satisfactory";
+    content: "Excellent";
 }
 
 .container form {
@@ -130,11 +146,12 @@ input:checked ~ form {
 
 form header {
     width: 100%;
-    font-size: 1.5rem; /* Adjusted for scalability */
+    font-size: 1.7rem; /* Adjusted for scalability */
     clear: both;
     font-weight: 500;
     margin: 5px 0 20px 0;
     text-align: center;
+    text-shadow: black 0 0 25px;
     transition: all 0.2s ease;
 }
 
@@ -148,9 +165,9 @@ form .textarea textarea {
     height: 100%;
     width: 100%;
     outline: none;
-    color: #eee;
+    color: black;
     border: 1px solid #333;
-    background: #222;
+    background-color: cornsilk;
     padding: 10px;
     font-size: 1rem; /* Adjusted for scalability */
     resize: none;
@@ -167,8 +184,8 @@ form .btn button {
     width: 100%;
     border: 1px solid #444;
     outline: none;
-    background: #222;
-    color: #999;
+    background-color: cornsilk;
+    color: black;
     font-size: 1rem; /* Adjusted for scalability */
     font-weight: 500;
     text-transform: uppercase;
@@ -178,6 +195,9 @@ form .btn button {
 
 form .btn button:hover {
     background-color: #1b1b1b;
+    background-color: black;
+    color: white;
+    transform: scale(1.05);
 }
 
 /* Media Queries for Responsive Design */
@@ -185,14 +205,13 @@ form .btn button:hover {
     .container {
         padding: 15px 20px;
     }
-
     .container .text {
         font-size: 1.25rem;
     }
-
     .star-widget label {
         font-size: 2rem;
         padding: 4px;
+        
     }
 
     form header {
