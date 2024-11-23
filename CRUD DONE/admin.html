@@ -6,6 +6,10 @@
   <title>Select Office</title>
   <style>
     body {
+      background-image: url(officeimg.jpg); /* Ensure the image path is correct */
+      background-size: cover; /* Makes the background image cover the viewport */
+      background-position: center; /* Centers the image */
+      background-repeat: no-repeat; /* Prevents repetition */
       font-family: Arial, sans-serif;
       margin: 0;
       height: 100vh;
@@ -16,11 +20,17 @@
 
     .container {
       text-align: center;
+      background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent white background */
+      padding: 30px;
+      border-radius: 15px;
+      border: 2px solid rgba(0, 0, 0, 0.5); /* Semi-transparent black border */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth with a shadow */
     }
 
     h1 {
       margin-bottom: 40px;
       font-size: 2rem;
+      color: #333; /* Darker text color for better contrast */
     }
 
     button {
@@ -28,16 +38,20 @@
       margin: 20px 0;
       font-size: 20px;
       cursor: pointer;
-      background-color: #f44336;
-      color: white;
-      border: none;
+      background-color: cornsilk;
+      color: black;
+      border: 2px solid black;
       border-radius: 10px;
       width: 300px;
       display: block;
+      font-weight: bold;
+      transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
     button:hover {
-      background-color: #e53935;
+      background-color: black;
+      color: white;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -46,8 +60,8 @@
   <div class="container">
     <h1>Select an Office</h1>
     
-    <button onclick="selectOffice('Office1')">Office 1</button>
-    <button onclick="selectOffice('Office2')">Office 2</button>
+    <button onclick="selectOffice('Office1')">Office of Engineering</button>
+    <button onclick="selectOffice('Office2')">Office of </button>
     <button onclick="selectOffice('Office3')">Office 3</button>
   </div>
 
